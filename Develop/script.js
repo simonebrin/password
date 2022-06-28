@@ -1,8 +1,46 @@
+Math.floor(Math.random() * 10)
+
+function getRandomNumber() {
+  var value =  Math.floor(Math.random() * 10);
+  return value;
+}
+console.log(getRandomNumber());
+console.log[randomNumber];
+var randomNumber = function() {
+  var value = Math.floor(Math.random() * 10);
+}
+randomNumber();
+
+Math.floor(Math.random() * 10);
+
+var randomNumber = function() {
+  var value = Math.floor(Math.random() * 11);
+
+  return value;
+}
+randomNumber();
+//passwordNumber = randomNumber;
+
+var randomNumber = function() {
+  var value = Math.floor(Math.random() * 11);
+
+  return value;
+}
+passwordNumber = randomNumber;
+
+var randomNumber = function() {
+  var value = Math.floor(Math.random() * 21) + 40;
+
+  return value;
+}
+randomNumber();
+
+
 function getRandomLower() {
   return String.fromCharCode(Math.floor(Math.random() * 26) + 97);
 }
 
-console.log(getRandomLower())
+console.log(getRandomLower());
 // Assignment code here
 
 
@@ -21,4 +59,4 @@ function writePassword() {
 // Add event listener to generate button
 generateBtn.addEventListener("click", writePassword);
 
-test
+//test;
