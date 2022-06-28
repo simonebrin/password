@@ -5,13 +5,12 @@ function getRandomNumber() {
   return value;
 }
 console.log(getRandomNumber());
-console.log[randomNumber];
-var randomNumber = function() {
-  var value = Math.floor(Math.random() * 10);
-}
-randomNumber();
 
-Math.floor(Math.random() * 10);
+var randomNumber = function() {
+  return value = Math.floor(Math.random() * 10);
+
+}
+console.log(randomNumber());
 
 var randomNumber = function() {
   var value = Math.floor(Math.random() * 11);
