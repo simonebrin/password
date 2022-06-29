@@ -38,6 +38,7 @@ generateBtn.addEventListener("click", writePassword);
 
 //test;
 
+//function for choosing length
 function setLength(){
   passwordLength = prompt("Choose how many characters long you'd like your password to be (between 8-128 characters): ");
 
@@ -51,9 +52,59 @@ function setLength(){
       alert("Password length must be a number between 8-128 characters");
       setLength();
     }else{
-    alert("The next three screens will ask you what types of characters you would like to be included in your password.\nIf you choose 'No' for all, your password will only contain lowercase letters.");
+    alert("The next screens will ask you what types of characters you would like to be included in your password.");
     }
     return passwordLength;
 }
 
+//function for choosing upper case
+function determineUppercase(){
+  uppercaseCheck = prompt("Do you want to include uppercase letters in your password? \n(Yes or No)");
+    uppercaseCheck = uppercaseCheck.toLowerCase();
+
+    if (uppercaseCheck === null || uppercaseCheck === ""){
+      alert("Please answer Yes or No");
+      determineUppercase();
+
+    }else if (uppercaseCheck === "yes" || uppercaseCheck ==="y"){
+      uppercaseCheck = true;
+      return uppercaseCheck;
+
+    }else if (uppercaseCheck === "no" || uppercaseCheck ==="n"){
+      uppercaseCheck = false;
+      return uppercaseCheck;
+    
+    }else {
+      alert("Please answer Yes or No");
+      determineUppercase();
+    }
+    return uppercaseCheck;
+}
+
+//function for choosing numbers
+function determineNumbers(){
+  numberCheck = prompt("Do you want to include numbers in your password? \n(Yes or No)");
+  numberCheck = numberCheck.toLowerCase();
+
+  if (numberCheck === null || numberCheck === "") {
+    alert("Please answer Yes or No");
+    determineNumbers();
+  
+  }else if (numberCheck === "yes" || numberCheck === "y"){
+    numberCheck = true;
+    return numberCheck;
+
+  }else if (numberCheck === "no" || numberCheck === "n"){
+    numberCheck = false;
+    return numberCheck;
+
+  }else {
+    alert("Please answer Yes or No");
+    determineNumbers();
+  }
+  return numberCheck;
+}
+
 setLength()
+determineUppercase()
+determineNumbers()
