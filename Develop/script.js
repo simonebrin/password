@@ -32,6 +32,38 @@ function writePassword() {
   passwordText.value = password;
 
 }
+var letters = 'abcdefghijklmnopqrstuvwxyz'
+var lowerLetters = letters.split('')
+var upperLetters = letters.toUpperCase().split('')
+var numbers = [0,1,2,3,4,5,6,7,8,9]
+var symbols = ['!', '@', '#', '$', "%"]
+var storedCriterias = []
+console.log(storedCriterias)
+// When the app starts the user should be to click a button
+// ONce clicked they are given prompts to verify the credientials of their password
+//Once we store that information, then we create a random password based on those criterias
+//Where is the characters?
+
+// Create an array to hold their choices
+// ON true oof the character, then we push those characters into that array
+
+function generatePassword() {
+  var passwordLen = setLength()
+  determineUppercase()
+  determineNumbers()
+  determineSymbols()
+  determinelowercase()
+  getRandomPassword(passwordLen)
+}
+
+
+
+
+
+
+
+
+
 
 // Add event listener to generate button
 generateBtn.addEventListener("click", writePassword);
@@ -51,60 +83,51 @@ function setLength(){
     }else if (isNaN(passwordLength)){
       alert("Password length must be a number between 8-128 characters");
       setLength();
-    }else{
-    alert("The next screens will ask you what types of characters you would like to be included in your password.");
     }
+    console.log(passwordLength)
     return passwordLength;
 }
 
 //function for choosing upper case
 function determineUppercase(){
-  uppercaseCheck = prompt("Do you want to include uppercase letters in your password? \n(Yes or No)");
-    uppercaseCheck = uppercaseCheck.toLowerCase();
-
-    if (uppercaseCheck === null || uppercaseCheck === ""){
-      alert("Please answer Yes or No");
-      determineUppercase();
-
-    }else if (uppercaseCheck === "yes" || uppercaseCheck ==="y"){
-      uppercaseCheck = true;
-      return uppercaseCheck;
-
-    }else if (uppercaseCheck === "no" || uppercaseCheck ==="n"){
-      uppercaseCheck = false;
-      return uppercaseCheck;
-    
-    }else {
-      alert("Please answer Yes or No");
-      determineUppercase();
-    }
+  uppercaseCheck = confirm("Do you want to include uppercase letters in your password? \n(Yes or No)");
+  console.log(uppercaseCheck)
+  // if the user's choice is true, then push uppercase array into the stored criteria array
+  if (uppercaseCheck === true) {
+    storedCriterias.push(upperLetters)
+  }
+  console.log(storedCriterias)
     return uppercaseCheck;
 }
 
 //function for choosing numbers
 function determineNumbers(){
-  numberCheck = prompt("Do you want to include numbers in your password? \n(Yes or No)");
-  numberCheck = numberCheck.toLowerCase();
-
-  if (numberCheck === null || numberCheck === "") {
-    alert("Please answer Yes or No");
-    determineNumbers();
-  
-  }else if (numberCheck === "yes" || numberCheck === "y"){
-    numberCheck = true;
-    return numberCheck;
-
-  }else if (numberCheck === "no" || numberCheck === "n"){
-    numberCheck = false;
-    return numberCheck;
-
-  }else {
-    alert("Please answer Yes or No");
-    determineNumbers();
-  }
+  numberCheck = confirm("Do you want to include numbers in your password? \n(Yes or No)");
+  console.log(numberCheck)
   return numberCheck;
 }
 
-setLength()
-determineUppercase()
-determineNumbers()
+//function for choosing symbols
+function determineSymbols(){
+  determineSymbolsCheck = confirm("Do you want to include symbols in your password? \n(Yes or No)");
+  console.log(determineSymbolsCheck)
+  return determineSymbolsCheck;
+}
+
+//function for choosing lower case
+function determinelowercase(){
+  lowercaseCheck = confirm("Do you want to include lowercase letters in your password? \n(Yes or No)");
+  console.log(lowercaseCheck)
+    return lowercaseCheck;
+}
+
+function getRandomPassword(passwordLen) {
+var finalPassword = ''
+  for (let i = 0; i < passwordLen; i++) {
+
+    finalPassword += storedCriterias[Math.floor(Math.random() * 10)]
+    
+  }
+  return finalPassword
+
+}
