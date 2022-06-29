@@ -12,28 +12,6 @@ var randomNumber = function() {
 }
 console.log(randomNumber());
 
-var randomNumber = function() {
-  var value = Math.floor(Math.random() * 11);
-
-  return value;
-}
-randomNumber();
-//passwordNumber = randomNumber;
-
-var randomNumber = function() {
-  var value = Math.floor(Math.random() * 11);
-
-  return value;
-}
-passwordNumber = randomNumber;
-
-var randomNumber = function() {
-  var value = Math.floor(Math.random() * 21) + 40;
-
-  return value;
-}
-randomNumber();
-
 
 function getRandomLower() {
   return String.fromCharCode(Math.floor(Math.random() * 26) + 97);
@@ -59,3 +37,23 @@ function writePassword() {
 generateBtn.addEventListener("click", writePassword);
 
 //test;
+
+function setLength(){
+  passwordLength = prompt("Choose how many characters long you'd like your password to be (between 8-128 characters): ");
+
+    if (passwordLength<8){
+      alert("Password length must be a number between 8-128 characters");
+      setLength();
+    }else if (passwordLength>128){
+      alert("Password length must be a number between 8-128 characters");
+      setLength();
+    }else if (isNaN(passwordLength)){
+      alert("Password length must be a number between 8-128 characters");
+      setLength();
+    }else{
+    alert("The next three screens will ask you what types of characters you would like to be included in your password.\nIf you choose 'No' for all, your password will only contain lowercase letters.");
+    }
+    return passwordLength;
+}
+
+setLength()
