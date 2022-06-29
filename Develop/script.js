@@ -104,6 +104,10 @@ function determineUppercase(){
 function determineNumbers(){
   numberCheck = confirm("Do you want to include numbers in your password? \n(Yes or No)");
   console.log(numberCheck)
+  if (numberCheck === true) {
+    storedCriterias.push(numbers)
+  }
+  console.log(storedCriterias)
   return numberCheck;
 }
 
@@ -111,6 +115,10 @@ function determineNumbers(){
 function determineSymbols(){
   determineSymbolsCheck = confirm("Do you want to include symbols in your password? \n(Yes or No)");
   console.log(determineSymbolsCheck)
+  if (determineSymbolsCheck === true) {
+    storedCriterias.push(symbols)
+  }
+  console.log(storedCriterias)
   return determineSymbolsCheck;
 }
 
@@ -118,6 +126,10 @@ function determineSymbols(){
 function determinelowercase(){
   lowercaseCheck = confirm("Do you want to include lowercase letters in your password? \n(Yes or No)");
   console.log(lowercaseCheck)
+  if (lowercaseCheck === true) {
+    storedCriterias.push(lowerLetters)
+  }
+  console.log(storedCriterias)
     return lowercaseCheck;
 }
 
@@ -125,7 +137,7 @@ function getRandomPassword(passwordLen) {
 var finalPassword = ''
   for (let i = 0; i < passwordLen; i++) {
 
-    finalPassword += storedCriterias[Math.floor(Math.random() * 10)]
+    finalPassword += storedCriterias.passwordLen[Math.floor(Math.random() * 10)]
     
   }
   return finalPassword
