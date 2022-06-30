@@ -36,7 +36,7 @@ var letters = 'abcdefghijklmnopqrstuvwxyz'
 var lowerLetters = letters.split('')
 var upperLetters = letters.toUpperCase().split('')
 var numbers = [0,1,2,3,4,5,6,7,8,9]
-var symbols = ['!', '@', '#', '$', "%"]
+var symbols = ['!', '@', '#', '$', '%', '&',]
 var storedCriterias = []
 console.log(storedCriterias)
 // When the app starts the user should be to click a button
