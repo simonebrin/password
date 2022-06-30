@@ -1,23 +1,23 @@
-Math.floor(Math.random() * 10)
+// Math.floor(Math.random() * 10)
 
-function getRandomNumber() {
-  var value =  Math.floor(Math.random() * 10);
-  return value;
-}
-console.log(getRandomNumber());
+// function getRandomNumber() {
+//   var value =  Math.floor(Math.random() * 10);
+//   return value;
+// }
+// console.log(getRandomNumber());
 
-var randomNumber = function() {
-  return value = Math.floor(Math.random() * 10);
+// var randomNumber = function() {
+//   return value = Math.floor(Math.random() * 10);
 
-}
-console.log(randomNumber());
+// }
+// console.log(randomNumber());
 
 
-function getRandomLower() {
-  return String.fromCharCode(Math.floor(Math.random() * 26) + 97);
-}
+// function getRandomLower() {
+//   return String.fromCharCode(Math.floor(Math.random() * 26) + 97);
+// }
 
-console.log(getRandomLower());
+// console.log(getRandomLower());
 // Assignment code here
 
 
