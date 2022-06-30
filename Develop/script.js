@@ -47,6 +47,7 @@ console.log(storedCriterias)
 // Create an array to hold their choices
 // ON true oof the character, then we push those characters into that array
 
+
 function generatePassword() {
   var passwordLen = setLength()
   determineUppercase()
