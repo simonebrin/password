@@ -68,6 +68,7 @@ function generatePassword() {
 // Add event listener to generate button
 generateBtn.addEventListener("click", writePassword);
 
+
 //test;
 
 //function for choosing length
@@ -133,13 +134,12 @@ function determinelowercase(){
     return lowercaseCheck;
 }
 
-function getRandomPassword(passwordLen) {
+function getRandomPassword (passwordLen) {
 var finalPassword = ''
   for (let i = 0; i < passwordLen; i++) {
 
-    finalPassword += storedCriterias.passwordLen[Math.floor(Math.random() * 10)]
+    finalPassword += storedCriterias[Math.floor(Math.random()*10)]
     
   }
   return finalPassword
-
 }
